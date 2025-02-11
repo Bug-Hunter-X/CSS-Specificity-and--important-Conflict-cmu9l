@@ -1,0 +1,22 @@
+The solution lies in refactoring the CSS to avoid using `!important`:
+
+```css
+.parent {
+  color: blue;
+}
+
+.child {
+  color: red;
+}
+
+.parent .child {
+  color: green;
+}
+
+/* Or use a more specific selector if needed */
+.parent .child.specific {
+  color: purple;
+}
+```
+
+By removing `!important` and utilizing more specific selectors, we ensure that CSS rules are applied predictably and consistently based on specificity, making the code easier to maintain and debug.
